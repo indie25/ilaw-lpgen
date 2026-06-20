@@ -1,0 +1,298 @@
+/* ═══════════════════════════════════════════
+   ILAW Lesson Plan Generator — styles.css
+   DepEd Philippines — DO No. 016, s. 2026
+   ═══════════════════════════════════════════ */
+
+/* Google Fonts — Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ─── Base Resets ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbars ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ─── Sidebar Components ─── */
+.sidebar-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1e3a5f;
+  margin-bottom: 12px;
+}
+
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: 'Inter', system-ui, sans-serif;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.field-input:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+select.field-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 14px;
+  padding-right: 28px;
+}
+
+/* ─── Toggle Checkboxes ─── */
+.toggle-group {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.toggle-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.toggle-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  padding: 3px 0;
+}
+
+.toggle-check input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.toggle-text {
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* ─── Action Buttons ─── */
+.action-btn-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.action-btn-primary:hover {
+  background: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.action-btn-primary:active { transform: scale(0.98); }
+
+.action-btn-secondary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  background: #fff;
+  color: #374151;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+
+.action-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* ─── Quill Editor Overrides ─── */
+.ql-toolbar.ql-snow {
+  background: #f8fafc;
+  border-color: #e2e8f0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  padding: 8px 16px;
+  position: sticky;
+  top: 56px;
+  z-index: 10;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  font-family: Arial, 'Times New Roman', serif;
+  font-size: 11pt;
+}
+
+.ql-editor {
+  padding: 32px 48px;
+  min-height: 1000px;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.ql-editor h1 { font-size: 16pt; font-weight: 700; margin: 12px 0 6px; color: #1e3a5f; }
+.ql-editor h2 { font-size: 13pt; font-weight: 700; margin: 10px 0 5px; color: #2563eb; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+.ql-editor h3 { font-size: 11pt; font-weight: 700; margin: 8px 0 4px; color: #374151; }
+.ql-editor p { margin: 4px 0; }
+.ql-editor ul, .ql-editor ol { padding-left: 24px; margin: 4px 0; }
+.ql-editor li { margin: 2px 0; }
+.ql-editor strong { color: #1e3a5f; }
+.ql-editor blockquote {
+  border-left: 3px solid #2563eb;
+  padding: 6px 12px;
+  background: #eff6ff;
+  margin: 8px 0;
+  color: #1e3a5f;
+  border-radius: 0 6px 6px 0;
+}
+.ql-editor table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+.ql-editor td, .ql-editor th { border: 1px solid #e2e8f0; padding: 6px 10px; font-size: 10pt; }
+.ql-editor th { background: #f1f5f9; font-weight: 700; }
+
+/* ─── ILAW Section Styling in Document ─── */
+.ilaw-section-header {
+  background: #1e3a5f;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 11pt;
+  border-radius: 4px 4px 0 0;
+  margin-top: 16px;
+  letter-spacing: 0.04em;
+}
+
+.ilaw-section-badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: #1e3a5f;
+  font-size: 9pt;
+  font-weight: 900;
+  padding: 1px 7px;
+  border-radius: 20px;
+  margin-right: 6px;
+}
+
+/* ─── Grading Panel ─── */
+.grade-weight-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.grade-weight-ww { background: #3b82f6; flex: 20; }
+.grade-weight-pt { background: #10b981; flex: 50; }
+.grade-weight-st { background: #f59e0b; flex: 30; }
+
+/* ─── Emergency Tier Banner ─── */
+.tier-banner {
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tier-hinay { background: #fefce8; border: 1px solid #fde68a; color: #92400e; }
+.tier-hinga { background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }
+.tier-hinto { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+
+/* ─── Toast Animation ─── */
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+#toast.show { animation: toastIn 0.25s ease-out; }
+
+/* ─── Print Styles ─── */
+@media print {
+  #leftSidebar, aside:last-child, header, #emptyState { display: none !important; }
+  main { margin: 0 !important; padding: 0 !important; }
+  #lessonPaperWrapper { box-shadow: none !important; border: none !important; }
+  .ql-toolbar { display: none !important; }
+  .ql-editor { padding: 20px; }
+}
+
+/* ─── Responsive adjustments ─── */
+@media (max-width: 1024px) {
+  #leftSidebar { transform: translateX(-100%); }
+  #leftSidebar.open { transform: translateX(0); }
+  main { margin-left: 0 !important; margin-right: 0 !important; }
+  aside:last-child { display: none; }
+}
+
+/* ─── PWA Install Button (visible) ─── */
+#pwaInstallBtn { display: none; }
+#pwaInstallBtn.visible { display: flex; }
+
+/* ─── Offline Indicator ─── */
+#offlineIndicator.visible { display: flex; }
